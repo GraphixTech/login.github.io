@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated Sign Up Page</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card {
+    width: 400px;
+    padding: 20px;
+    border: none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s;
+  }
+  .card:hover {
+    transform: scale(1.05);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="card">
+    <h2 class="text-center">Sign Up</h2>
+    <form id="signup-form">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" class="form-control" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+      <button type="submit" class="btn btn-primary btn-block"> <a href="create.html" class="link">New User</a></button>
+      
+    </form>
+  </div>
+</div>
+<script>
+  const form = document.getElementById('signup-form');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const username = form.username.value;
+    const email = form.email.value;
+    // You can perform further validation or AJAX submission here
+    alert(`Sign-up successful!\nUsername: ${username}\nEmail: ${email}`);
+  });
+</script>
+</body>
+</html>
